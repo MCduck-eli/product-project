@@ -5,8 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "CM Store — Официальный магазин Apple и Samsung",
-    description: "Купить iPhone, MacBook, Apple Watch в Краснодаре",
+    title: "PRO-duct — Official store Apple и Samsung",
+    description: "Buy iPhone, MacBook, Apple Watch in Tashkent",
 };
 
 export default function RootLayout({

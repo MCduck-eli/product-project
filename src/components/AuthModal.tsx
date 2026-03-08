@@ -23,9 +23,18 @@ export default function AuthModal({
         setLoading(true);
 
         if (isRegister) {
-            const { error } = await supabase.auth.signUp({ email, password });
-            if (error) alert(error.message);
-            else alert("Emailingizga tasdiqlash xati yuborildi!");
+            const { data, error } = await supabase.auth.signUp({
+                email,
+                password,
+            });
+
+            if (error) {
+                alert(error.message);
+            } else if (data.user && data.user.identities?.length === 0) {
+                alert("Bu email allaqachon ro'yxatdan o'tgan!");
+            } else {
+                alert("Emailingizga tasdiqlash xati yuborildi!");
+            }
         } else {
             const { error } = await supabase.auth.signInWithPassword({
                 email,
